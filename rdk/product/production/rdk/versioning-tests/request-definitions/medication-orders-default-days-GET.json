@@ -1,0 +1,54 @@
+{
+	"parameters": {
+		"drug": {
+			"name": "drug",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		},
+		"oi": {
+			"name": "oi",
+			"paramType": "query",
+			"required": true,
+			"type": "number",
+			"values": [
+			]
+		},
+		"patientDFN": {
+			"name": "patientDFN",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		},
+		"schedStr": {
+			"name": "schedStr",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		},
+		"site": {
+			"name": "site",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		},
+		"unitStr": {
+			"name": "unitStr",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		}
+	},
+	"schema": {
+	}
+}

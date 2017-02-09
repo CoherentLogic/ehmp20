@@ -1,0 +1,172 @@
+<div class="detail-modal-content">
+	<div class="document-detail">
+		<div class="row">
+			<div class="col-xs-12">
+	            <h5 class="bottom-border-grey-dark">Details</h5>
+	        </div>
+			<div class="col-xs-3">
+				<p>
+					<span data-detail-label="facility"><strong>Facility</strong></span><br />
+					<span data-detail="facility">{{facilityName}}</span>
+				</p>
+			</div>
+			<div class="col-xs-3">
+				<p>
+					{{#if interdisciplinaryBool}}
+					<span data-detail-label="author"><strong>Author</strong></span><br />
+					<span data-detail="author">{{authorDisplayName}}</span>
+					{{else}}
+					<span data-detail-label="type"><strong>Type</strong></span><br />
+					<span data-detail="type">{{kind}}</span>
+					{{/if}}
+				</p>
+			</div>
+			<div class="col-xs-3">
+				<p>
+					<span data-detail-label="status"><strong>Status</strong></span><br />
+					<span class="{{statusClass}}" data-detail="status">{{statusName}}</span>
+				</p>
+			</div>
+			<div class="col-xs-3">
+				<p>
+					<span data-detail-label="date-time"><strong>Date/Time</strong></span><br />
+					<span data-detail="date-time">{{dateTimeDisplay}}</span>
+				</p>
+			</div>
+			{{#if surgeryBool}}
+			<div class="col-xs-3">
+				<p>
+					<span data-detail-label="providers"><strong>Providers</strong></span><br />
+					{{#each providers}}
+					<span data-detail="providers">{{providerDisplayName}}</span>
+					{{/each}}
+				</p>
+			</div>
+			{{else}}
+			{{/if}}
+			{{#if imagingBool}} {{#if providers}}
+			<div class="col-xs-3">
+				<p>
+					<span data-detail-label="providers"><strong>Providers</strong></span><br />
+					{{#each providers}}
+					<span data-detail="providers">{{providerDisplayName}}</span>
+					{{/each}}
+				</p>
+			</div>
+			{{/if}} {{/if}}
+		</div>
+		{{#if orderUid}}
+		<div class="row top-margin-sm">
+			<div class="col-xs-12">
+				<h5 class="bottom-border-grey-dark">Order Information</h5>
+			</div>
+			{{#if service}}
+			<div class="col-xs-3">
+				<p>
+					<span><strong>To Service</strong></span><br />
+					<span>{{service}}</span>
+				</p>
+			</div>
+			{{/if}}
+			{{#if fromService}}
+			<div class="col-xs-3">
+				<p>
+					<span><strong>From Service</strong></span><br />
+					<span>{{fromService}}</span>
+				</p>
+			</div>
+			{{/if}}
+			{{#if providerName}}
+			<div class="col-xs-3">
+				<p>
+					<span><strong>Requesting Provider</strong></span><br />
+					<span>{{providerName}}</span>
+				</p>
+			</div>
+			{{/if}}
+			{{#if place}}
+			<div class="col-xs-3">
+				<p>
+					<span><strong>Place</strong></span><br />
+					<span>{{place}}</span>
+				</p>
+			</div>
+			{{/if}}
+			{{#if urgency}}
+			<div class="col-xs-3">
+				<p>
+					<span><strong>Urgency</strong></span><br />
+					<span>{{urgency}}</span>
+				</p>
+			</div>
+			{{/if}}
+			{{#if orderName}}
+			<div class="col-xs-3">
+				<p>
+					<span><strong>Orderable Item</strong></span><br />
+					<span>{{orderName}}</span>
+				</p>
+			</div>
+			{{/if}}
+			{{#if consultProcedure}}
+			<div class="col-xs-3">
+				<p>
+					<span><strong>Procedure</strong></span><br />
+					<span>{{consultProcedure}}</span>
+				</p>
+			</div>
+			{{/if}}
+			{{#if reason}}
+			<div class="col-xs-3">
+				<p>
+					<span><strong>Reason</strong></span><br />
+					<span>{{reason}}</span>
+				</p>
+			</div>
+			{{/if}}
+			{{#if resultsTitle}}
+			<div class="col-xs-3">
+				<p>
+					<span><strong>Local Title</strong></span><br />
+					<span>{{resultsTitle}}</span>
+				</p>
+			</div>
+			{{/if}}
+		</div>
+		{{/if}}
+	</div>
+	{{#if content}}
+	<pre>{{content}}</pre>
+	{{/if}}
+	<div class="document-detail-addenda-region"></div>
+	<div class="results-region"></div>
+	<div class="children-region"></div>
+	{{#if activity}}
+	<div class="row top-margin-sm">
+		<div class="col-xs-12">
+			<h5 class="bottom-border-grey-dark">Activity</h5>
+		</div>
+		<div class="col-xs-12 table-responsive">
+		    <table class="table">
+		        <caption class="sr-only">This table represents data for activities categorized by date/time, name, and responsible.</caption>
+		        <thead>
+		            <tr>
+		                <th scope="col">Date/Time</th>
+		                <th scope="col">Name</th>
+		                <th scope="col">Responsible</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            {{#each activity}}
+		            <tr>
+		                <td>{{formatDate dateTime "MM/DD/YYYY - HH:mm"}}</td>
+		                <td>{{name}}</td>
+		                <td>{{responsible}}</td>
+		            </tr>
+		            {{/each}}
+		        </tbody>
+		    </table>
+		</div>
+	</div>
+	{{/if}}
+</div>

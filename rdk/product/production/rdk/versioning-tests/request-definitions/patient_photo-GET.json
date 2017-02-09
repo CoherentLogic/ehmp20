@@ -1,0 +1,14 @@
+{
+	"parameters": {
+		"pid": {
+			"name": "pid",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		}
+	},
+	"schema": {
+	}
+}

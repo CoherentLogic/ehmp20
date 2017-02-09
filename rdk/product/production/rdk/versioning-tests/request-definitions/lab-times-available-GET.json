@@ -1,0 +1,30 @@
+{
+	"parameters": {
+		"date": {
+			"name": "date",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		},
+		"location": {
+			"name": "location",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		},
+		"site": {
+			"name": "site",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		}
+	},
+	"schema": {
+	}
+}

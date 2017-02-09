@@ -1,0 +1,38 @@
+{
+	"parameters": {
+		"dfn": {
+			"name": "dfn",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		},
+		"loc": {
+			"name": "loc",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		},
+		"site": {
+			"name": "site",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		},
+		"visitDate": {
+			"name": "visitDate",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		}
+	},
+	"schema": {
+	}
+}

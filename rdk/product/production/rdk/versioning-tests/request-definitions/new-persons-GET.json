@@ -1,0 +1,21 @@
+{
+	"parameters": {
+		"date": {
+			"name": "date",
+			"paramType": "query",
+			"type": "string",
+			"values": [
+			]
+		},
+		"site": {
+			"name": "site",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		}
+	},
+	"schema": {
+	}
+}

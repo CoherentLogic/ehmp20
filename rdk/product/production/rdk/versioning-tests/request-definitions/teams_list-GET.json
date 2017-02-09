@@ -1,0 +1,13 @@
+{
+	"parameters": {
+		"facility": {
+			"name": "facility",
+			"paramType": "query",
+			"type": "string",
+			"values": [
+			]
+		}
+	},
+	"schema": {
+	}
+}

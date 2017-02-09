@@ -1,0 +1,14 @@
+{
+	"parameters": {
+		"uid": {
+			"name": "uid",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		}
+	},
+	"schema": {
+	}
+}

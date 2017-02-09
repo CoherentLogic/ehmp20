@@ -1,0 +1,101 @@
+.control.multiselectSideBySide-control {
+    &.has-error {
+        .available-region .faux-table {
+            border-left: 2px solid $red-dark;
+        }
+        .selected-region .faux-table {
+            border-right: 2px solid $red-dark;
+            .form-control {
+                border-color: $grey;
+            }
+        }
+        .header {
+            border-top: 2px solid $red-dark;
+        }
+        .body {
+            border-bottom: 2px solid $red-dark;
+        }
+        .help-block.error {
+            font-size: 13px;
+            font-weight: 600;
+        }
+    }
+    .table-cell {
+        min-height: 23px;
+        &.text-right {
+            button {
+                text-align: right;
+            }
+        }
+    }
+    .available-region {
+        .msbs-input {
+            background-color: $pure-white;
+            .control {
+                position: relative;
+                .fa-filter {
+                    position: absolute;
+                    top: 6px;
+                    left: 5px;
+                }
+                .filter {
+                    padding-right: 20px;
+                    padding-left: 15px;
+                    &::-ms-clear {
+                        display: none;
+                    }
+                }
+                .clear-input {
+                    position: absolute;
+                    top: -1px;
+                    right: 2px;
+                }
+                .loading {
+                    position: absolute;
+                    top: 4px;
+                    right: 4px;
+                }
+            }
+        }
+        .body.scrolling-content {
+            height: 156px;
+        }
+    }
+    .selected-region {
+        .body.scrolling-content {
+            height: calc(156px + 32px);
+            .table-row .table-cell .control .input-group {
+                .input-group-addon {
+                    padding: 2px;
+                }
+                .clone-input {
+                    left: 16px;
+                }
+            }
+        }
+    }
+    .total-selected-input {
+        height: 20px;
+        width: 0px;
+        opacity: 0;
+        margin-left: -20px;
+    }
+}
+
+
+/* Medium devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    .control.multiselectSideBySide-control {
+        .available-region {
+            &[class*="col-"] {
+                padding-right: 0;
+            }
+        }
+        .selected-region {
+            &[class*="col-"] {
+                padding-left: 0;
+            }
+        }
+    }
+}

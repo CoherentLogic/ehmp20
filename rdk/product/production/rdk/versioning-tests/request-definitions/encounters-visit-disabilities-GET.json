@@ -1,0 +1,22 @@
+{
+	"parameters": {
+		"dfn": {
+			"name": "dfn",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		},
+		"site": {
+			"name": "site",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		}
+	},
+	"schema": {
+	}
+}

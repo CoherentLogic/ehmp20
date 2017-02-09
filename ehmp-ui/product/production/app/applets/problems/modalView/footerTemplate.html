@@ -1,0 +1,17 @@
+<div class="pull-left">
+{{#hasPermission 'remove-patient-problem'}}
+    {{#if siteCodeMatches}}
+    	{{ui-button "Remove" classes="btn btn-danger btn-sm" title="Press enter to remove" id="deleteBtn"}}
+    {{else}}
+    	<p><strong>Only data originating in your facility may be edited.</strong></p>
+    {{/if}}
+{{/hasPermission}}
+</div>
+<div class="pull-right">
+    {{#hasPermission 'edit-condition-problem'}}
+    	{{#if siteCodeMatches}}
+    		{{ui-button "Edit" classes="btn btn-primary btn-sm" title="Press enter to edit" id="editBtn"}}
+    	{{/if}}
+	{{/hasPermission}}
+    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal" title="Press enter to close.">Close</button>
+</div>

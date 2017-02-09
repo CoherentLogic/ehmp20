@@ -1,0 +1,59 @@
+{
+	"parameters": {
+		"ien": {
+			"name": "ien",
+			"paramType": "query",
+			"type": "string",
+			"values": [
+			]
+		},
+		"needPatientInstructions": {
+			"name": "needPatientInstructions",
+			"paramType": "query",
+			"type": "boolean",
+			"values": [
+			]
+		},
+		"outpatientDfn": {
+			"name": "outpatientDfn",
+			"paramType": "query",
+			"type": "string",
+			"values": [
+			]
+		},
+		"pharmacyType": {
+			"name": "pharmacyType",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+				{
+					"value": "U"
+				},
+				{
+					"value": "F"
+				},
+				{
+					"value": "O"
+				}
+			]
+		},
+		"pkiEnabled": {
+			"name": "pkiEnabled",
+			"paramType": "query",
+			"type": "boolean",
+			"values": [
+			]
+		},
+		"site": {
+			"name": "site",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		}
+	},
+	"schema": {
+	}
+}

@@ -1,0 +1,13 @@
+description = 'eHMP Solr Configuration'
+
+task packageVPR(type: Tar) {
+  compression = Compression.GZIP
+  baseName = 'vpr'
+  version = getVersionByCommitCountForProject(":production:vpr", "src/main/solr")
+  destinationDir buildDir
+  from "${projectDir}/src/main/solr"
+}
+
+artifacts {
+  archives file: packageVPR.archivePath, name: 'vpr', type: 'tar', builtBy: packageVPR
+}

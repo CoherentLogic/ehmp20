@@ -1,0 +1,20 @@
+{
+	"parameters": {
+		"facility": {
+			"name": "facility",
+			"paramType": "query",
+			"type": "string",
+			"values": [
+			]
+		},
+		"siteUser": {
+			"name": "siteUser",
+			"paramType": "query",
+			"type": "string",
+			"values": [
+			]
+		}
+	},
+	"schema": {
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"parameters": {
+		"labType": {
+			"name": "labType",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		},
+		"searchString": {
+			"name": "searchString",
+			"paramType": "query",
+			"type": "string",
+			"values": [
+			]
+		},
+		"site": {
+			"name": "site",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		}
+	},
+	"schema": {
+	}
+}

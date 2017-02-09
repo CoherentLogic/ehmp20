@@ -1,0 +1,21 @@
+<div class="row pixel-height-20">
+    <div class="col-xs-4 meds-item-innerlist top-padding-xs">
+        <div class="row">
+            <div class="col-xs-1 right-padding-lg">
+                <span class="fa {{userSiteIcon}}"></span>
+            </div>
+            <div class="col-xs-10 all-padding-no no-capatilize">
+                {{{sigColumn}}}
+                {{#if ivDosages}}
+                    <span>{{ivDosages}}</span>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-3 text-center">
+        <p class="{{fillableLabel}}" title="{{fillableDescription}}">
+            {{fillableDisplay}} {{fillableDate}}
+        </p>
+    </div>
+    <div class="col-xs-5 chart no-capatilize"></div>
+</div>

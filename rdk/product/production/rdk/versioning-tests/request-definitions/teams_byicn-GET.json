@@ -1,0 +1,21 @@
+{
+	"parameters": {
+		"facility": {
+			"name": "facility",
+			"paramType": "query",
+			"type": "string",
+			"values": [
+			]
+		},
+		"icn": {
+			"name": "icn",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		}
+	},
+	"schema": {
+	}
+}

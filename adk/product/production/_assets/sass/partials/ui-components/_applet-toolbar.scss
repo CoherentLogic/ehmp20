@@ -1,0 +1,33 @@
+.toolbar-active:not(tr):not(li) {
+    box-shadow: 3px 3px 4px $grey-dark;
+    margin-bottom: 6px;
+}
+.toolbar-container.toolbar-open {
+    position: relative;
+}
+div.applet-toolbar {
+    display: none;
+    position: relative;
+    .btn-toolbar {
+        box-shadow: 5px 0px 10px -1px $grey-darker;
+        z-index: 2;
+        position: absolute;
+        top: -25px;
+        > .btn-group {
+            background-color: $pure-white;
+            display: inline-flex;
+            .btn {
+                border: 1px solid $pure-white;
+                border-right-width: 0;
+                border-radius: 0;
+                width: 25px;
+                height: 25px;
+                padding: 3px;
+                margin: auto;
+                &:last-child {
+                    border-right-width: 1px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,139 @@
+<div class="detail-modal-content">
+    <div class="row">
+        <div class="col-xs-9">
+            <h5>{{summary}}</h5>
+        </div>
+        <div class="col-xs-3 text-right" data-detail="allergySeverity">
+            {{#if acuityName}} {{#if severe}}
+            <span class="label label-error">{{acuityName}}</span>
+            {{else}} {{#if moderate}}
+            <span class="label label-warning">{{acuityName}}</span>
+            {{else}}
+            <span class="label label-info">{{acuityName}}</span>
+            {{/if}} {{/if}} {{else}}
+            <span>Severity Not Noted</span>
+            {{/if}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <p>
+                <strong>Symptoms:</strong>
+                <span>{{reaction}}</span>
+            </p>
+        </div>
+    </div>
+    <div class="row top-margin-sm">
+        <div class="col-xs-12">
+            <h5 class="bottom-border-grey-dark">Details</h5>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Drug Classes:</strong></span><br />
+                <span data-detail="drugClasses">
+                    {{#if drugClassesNames}}
+                        {{drugClassesNames}}
+                    {{else}}
+                        N/A
+                    {{/if}}
+                </span>
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Nature of Reaction:</strong></span><br />
+                <span data-detail="natureOfReaction">
+                    {{#if mechanism}}
+                        {{mechanism}}
+                    {{else}}
+                        N/A
+                    {{/if}}
+                </span>
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Entered By:</strong></span><br />
+                <span data-detail="originatorName">
+                    {{#if originatorName}}
+                        {{originatorName}}
+                    {{else}}
+                        N/A
+                    {{/if}}
+                </span>
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Originated:</strong></span><br />
+                <span data-detail="originatedFormatted">
+                    {{#if originatedFormatted}}
+                        {{originatedFormatted}}
+                    {{else}}
+                        N/A
+                    {{/if}}
+                </span>
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Verified:</strong></span><br />
+                <span data-detail="verifierName">
+                    {{#if verified}}
+                        {{formatDate verified "MM/DD/YYYY - HH:mm"}}
+                    {{else}}
+                        N/A
+                    {{/if}}
+                </span>
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Observed/Historical:</strong></span><br />
+                <span data-detail="observedOrHistorical">
+                    {{#if historical}}
+                        Historical
+                    {{else}}
+                        Observed
+                    {{/if}}
+                </span>
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Observed Date:</strong></span><br />
+                <span data-detail="observedDate">
+                    {{#if observedDate}}
+                        {{observedDate}}
+                    {{else}}
+                        N/A
+                    {{/if}}
+                </span>
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Facility:</strong></span><br />
+                <span data-detail="facilityName">
+                    {{#if facilityName}}
+                        {{facilityName}}
+                    {{else}}
+                        N/A
+                    {{/if}}
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="row top-margin-sm">
+        <div class="col-xs-12">
+            <h5 class="bottom-border-grey-dark">Comments:</h5>
+        </div>
+        <div class="col-xs-12">
+            {{#comments}}
+            <p class="detail-modal-comment">
+                <span data-detail="modalAllergyComment">{{comment}}</span>
+            </p>
+            {{/comments}}
+        </div>
+    </div>
+</div>

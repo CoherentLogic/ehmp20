@@ -1,0 +1,10 @@
+{
+  "id": "vler",
+  "normal": {
+    "ipaddress": "IP__ADDRESS",
+    "stack": "production-staging-deploy-dev",
+    "roles": [
+      "vler"
+    ]
+  }
+}

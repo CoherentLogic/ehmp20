@@ -1,0 +1,84 @@
+<div class="detail-modal-content drop-shadow all-padding-md" tabindex="0" data-detail="content">
+    <span class="sr-only">To Go back to Order History panel press ALT + M</span>
+    <div class="row">
+        <div class="col-xs-9">
+            <h4>{{name}} {{strength}}</h4>
+        </div>
+        <div class="col-xs-3 text-right">
+            <span class="font-size-14 text-uppercase"><strong>{{modifiedVaStatus}}</strong></span>
+        </div>
+        <div class="col-xs-9">
+            <p>{{computedSig}}</p>
+        </div>
+        <div class="col-xs-3 text-right">
+            <p>(Non-VA)</p>
+            <p>{{facilityName}}</p>
+        </div>
+    </div>
+    <div class="row top-margin-sm">
+        <div class="col-xs-12">
+            <h5 class="bottom-border-grey-dark">Order Details</h5>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Ordering Provider</strong></span><br />
+                {{#if orders}}
+                    {{#each orders}}
+                        <span>
+                            {{#if providerName}}
+                                {{providerName}}{{#if ordered}} <span class="text-lowercase">on</span> {{formatDate ordered "MM/DD/YYYY HH:mm"}}{{/if}}
+                            {{else}}
+                                No Data
+                            {{/if}}
+                        </span><br />
+                    {{/each}}
+                {{else}}
+                    <span>No Data</span><br />
+                {{/if}}
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Ordering Location</strong></span><br />
+                {{#if orders}}
+                    {{#each orders}}
+                        <span>{{#if locationName}}{{locationName}}{{else}}No Data{{/if}}</span><br />
+                    {{/each}}
+                {{else}}
+                    <span>No Data</span><br />
+                {{/if}}
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Order Text</strong></span><br />
+                <span>{{name}} {{strength}}</span>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Start Date/Time</strong></span><br />
+                <span>
+                    {{#if overallStart}}
+                        {{formatDate overallStart "MM/DD/YYYY HH:mm"}}
+                    {{else}}
+                        No Data
+                    {{/if}}
+                </span>
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Order Number</strong></span><br />
+                <span>{{slicedOrderUid}}</span>
+            </p>
+        </div>
+    </div>
+    <div class="row top-margin-sm">
+        <div class="col-xs-12">
+            <h5 class="bottom-border-grey-dark">Statement/Explanation</h5>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+{
+  "id": "vhic",
+  "normal": {
+    "ipaddress": "IP__ADDRESS",
+    "stack": "production-staging-deploy-dev",
+    "roles": [
+      "vhic"
+    ]
+  }
+}

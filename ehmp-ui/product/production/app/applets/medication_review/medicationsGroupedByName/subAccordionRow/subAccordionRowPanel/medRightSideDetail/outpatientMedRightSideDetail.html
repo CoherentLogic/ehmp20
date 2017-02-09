@@ -1,0 +1,173 @@
+<div class="detail-modal-content drop-shadow all-padding-md" tabindex="0" data-detail="content">
+    <span class="sr-only">To Go back to Order History panel press ALT + M</span>
+    <div class="row">
+        <div class="col-xs-9">
+            <h4>{{name}} {{strength}}</h4>
+        </div>
+        <div class="col-xs-3 text-right">
+            <span class="font-size-14 text-uppercase"><strong>{{modifiedVaStatus}}</strong></span>
+            <p>{{facilityName}}</p>
+        </div>
+        <div class="col-xs-12">
+            <p>{{computedSig}}</p>
+        </div>
+    </div>
+    <div class="row top-margin-sm">
+        <div class="col-xs-12">
+            <h5 class="bottom-border-grey-dark">Order Details</h5>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Ordering Provider</strong></span><br />
+                {{#if orders}}
+                    {{#each orders}}
+                        <span>
+                            {{#if providerName}}
+                                {{providerName}}{{#if ordered}} <span class="text-lowercase">on</span> {{formatDate ordered "MM/DD/YYYY HH:mm"}}{{/if}}
+                            {{else}}
+                                No Data
+                            {{/if}}
+                        </span><br />
+                    {{/each}}
+                {{else}}
+                    <span>No Data</span><br />
+                {{/if}}
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Ordering Location</strong></span><br />
+                {{#if orders}}
+                    {{#each orders}}
+                        <span>{{#if locationName}}{{locationName}}{{else}}No Data{{/if}}</span><br />
+                    {{/each}}
+                {{else}}
+                    <span>No Data</span><br />
+                {{/if}}
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Pharmacist</strong></span><br />
+                {{#if orders}}
+                    {{#each orders}}
+                        <span>{{#if pharmacistName}}{{pharmacistName}}{{else}}No Data{{/if}}</span><br />
+                    {{/each}}
+                {{else}}
+                    <span>No Data</span><br />
+                {{/if}}
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Order Text</strong></span><br />
+                <span>{{name}} {{strength}}</span>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Start Date/Time</strong></span><br />
+                <span>
+                    {{#if overallStart}}
+                        {{formatDate overallStart "MM/DD/YYYY HH:mm"}}
+                    {{else}}
+                        No Data
+                    {{/if}}
+                </span>
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Stop Date/Time</strong></span><br />
+                {{#if isDiscontinued}}
+                    <span class="right-padding-xs">{{#if stopped}}{{formatDate stopped "MM/DD/YYYY HH:mm"}}{{else}}No Data{{/if}}</span>
+                {{/if}}
+                {{#if showExpiredDate}}
+                    <span>{{#if overallStop}}({{expireText}} {{formatDate overallStop "MM/DD/YYYY HH:mm"}}){{else}}No Data{{/if}}</span>
+                {{/if}}
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Order Number</strong></span><br />
+                <span>{{slicedOrderUid}}</span>
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Prescription Number</strong></span><br />
+                {{#if orders}}
+                    {{#each orders}}
+                        <span>{{#if prescriptionId}}{{prescriptionId}}{{else}}No Data{{/if}}</span><br />
+                    {{/each}}
+                {{else}}
+                    <span>No Data</span><br />
+                {{/if}}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Quantity/Day Supply</strong></span><br />
+                {{#if orders}} {{#each orders}}
+                <span class="right-padding-xs">{{convertStringToInteger quantityOrdered}} <span class="text-lowercase">for</span> {{convertStringToInteger daysSupply}} <span class="text-lowercase">days</span></span><br />
+                {{/each}} {{else}}
+                <span>No Data</span>
+                {{/if}}
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Fills Remaining</strong></span><br />
+                {{#if orders}} {{#each orders}}
+                <span>{{convertStringToInteger fillsRemaining}} <span class="text-lowercase">of</span> {{convertStringToInteger fillsAllowed}}</span><br />
+                {{/each}} {{else}}
+                <span>No Data</span>
+                {{/if}}
+            </p>
+        </div>
+    </div>
+    <div class="row top-margin-sm">
+        <div class="col-xs-12">
+            <h5 class="bottom-border-grey-dark">Fill History</h5>
+        </div>
+        <div class="col-xs-12">
+            {{#if fills}}
+            <div class="table-responsive">
+                <table class="table">
+                    <caption class="sr-only">This table represents the history of filled selected medication categorized by dispense date, release date, fill, and type.</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Dispense Date</th>
+                            <th scope="col">Release Date</th>
+                            <th scope="col">Fill</th>
+                            <th scope="col">Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each fills}}
+                        <tr>
+                            <td>{{#if dispenseDate}}{{formatDate dispenseDate}}{{else}}No Data{{/if}}</td>
+                            <td>{{#if releaseDate}}{{formatDate releaseDate}}{{else}}No Data{{/if}}</td>
+                            <td>
+                            {{#if daysSupplyDispensed}}
+                                {{quantityDispensed}} <span class="text-lowercase">for</span> {{daysSupplyDispensed}} <span class="text-lowercase">days</span>
+                            {{else}}
+                                {{#if quantityDispensed}}{{quantityDispensed}} dispensed{{else}}No Data{{/if}}
+                            {{/if}}
+                            </td>
+                            <td>{{#if ../pickupTypeText}}{{../pickupTypeText}}{{else}}No Data{{/if}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            {{else}}
+                <p>No Data</p>
+            {{/if}}
+        </div>
+    </div>
+</div>

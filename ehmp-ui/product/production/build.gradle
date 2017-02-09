@@ -1,0 +1,35 @@
+buildscript {
+  repositories {
+      jcenter()
+      maven { url 'http://dl.bintray.com/robfletcher/gradle-plugins' }
+  }
+  dependencies {
+      classpath 'com.moowork.gradle:gradle-grunt-plugin:0.5'
+  }
+}
+
+apply plugin: 'grunt'
+
+task installNpm (type: Exec) {
+  commandLine "npm", "install"
+  workingDir "."
+}
+
+task test(dependsOn: [installNpm, grunt_test]) {
+  group "Test"
+  description "Run test on the applets"
+}
+
+task build(dependsOn: [installNpm]) {}
+if (!hasProperty("type")) {
+  ext.type = "local"
+}
+if (type == "dist") {
+  build.dependsOn grunt_prodOptimize
+} else {
+  build.dependsOn grunt_optimize
+}
+
+test.dependsOn build
+grunt_optimize.mustRunAfter installNpm
+grunt_prodOptimize.mustRunAfter installNpm

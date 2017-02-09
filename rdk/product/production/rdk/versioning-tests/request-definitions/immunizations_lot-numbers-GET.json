@@ -1,0 +1,14 @@
+{
+	"parameters": {
+		"uri": {
+			"name": "uri",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		}
+	},
+	"schema": {
+	}
+}

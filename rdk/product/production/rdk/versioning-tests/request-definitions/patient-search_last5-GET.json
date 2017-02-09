@@ -1,0 +1,35 @@
+{
+	"parameters": {
+		"last5": {
+			"name": "last5",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		},
+		"limit": {
+			"name": "limit",
+			"paramType": "query",
+			"type": "number",
+			"values": [
+			]
+		},
+		"order": {
+			"name": "order",
+			"paramType": "query",
+			"type": "string",
+			"values": [
+			]
+		},
+		"start": {
+			"name": "start",
+			"paramType": "query",
+			"type": "number",
+			"values": [
+			]
+		}
+	},
+	"schema": {
+	}
+}

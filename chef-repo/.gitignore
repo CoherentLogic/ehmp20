@@ -1,0 +1,23 @@
+.chef/local-mode-cache/
+.chef/vms/
+.chef/keys
+.chef/*.pem
+!.chef/deploy.pem
+.chef/
+nodes/
+clients/
+cache/
+.gradle/
+
+environments/rdk-*
+environments/ehmp-ui-*
+environments/ehmp-*
+environments/opencds-*
+environments/cdsinvocation-*
+environments/cdsdashboard-*
+
+###########
+# Bad stuff
+###########
+.DS_STORE
+

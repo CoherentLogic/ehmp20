@@ -1,0 +1,211 @@
+{{#if fError}}
+<div class="row" id="errorMsg">
+  <p>{{errorMsg}}</p>
+</div>
+{{else}}
+<div class="detail-modal-content">
+    <div class="row">
+        <div class="col-xs-12">
+            <h5 class="bottom-border-grey-dark">Details</h5>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Date</strong></span><br />
+                <span data-detail="dateTime">{{formatDate dateTime "MM/DD/YYYY - HH:mm"}}</span>
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Type</strong></span><br />
+                <span data-detail="typeDisplayName">{{typeDisplayName}}</span>
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Category</strong></span><br />
+                <span data-detail="categoryName">
+                {{#if categoryName}}
+                    {{categoryName}}
+                {{else}}
+                    N/A
+                {{/if}}
+                </span>
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Patient Class</strong></span><br />
+                <span data-detail="patientClassName">
+                    {{#if patientClassName}}
+                        {{patientClassName}}
+                    {{else}}
+                        N/A
+                    {{/if}}
+                </span>
+            </p>
+        </div>
+        {{#if appointmentStatus}}
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Appointment Status</strong></span><br />
+                <span data-detail="appointmentStatus">{{appointmentStatus}}</span>
+            </p>
+        </div>
+        {{/if}}
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Location</strong></span><br />
+                <span data-detail="locationDisplayName">
+                    {{#if locationDisplayName}}
+                        {{locationDisplayName}}
+                    {{else}}
+                        N/A
+                    {{/if}}
+                </span>
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Stop Code</strong></span><br />
+                <span data-detail="stopCodeName">
+                    {{#if stopCodeName}}
+                        {{stopCodeName}}
+                    {{else}}
+                        N/A
+                    {{/if}}
+                </span>
+            </p>
+        </div>
+
+        <div class="col-xs-3">
+            <p>
+                <span><strong>Facility</strong></span><br />
+                <span data-detail="facilityName">{{facilityName}}</span>
+            </p>
+        </div>
+    </div>
+    {{#if providers}}
+    <div class="row top-margin-sm">
+        <div class="col-xs-12">
+            <h5 class="bottom-border-grey-dark" data-group-instanceid="providerSection">Providers</h5>
+        </div>
+        {{#each providers}}
+        <div class="col-xs-3">
+            <p>
+                {{#if primary}}
+                <span><strong>Primary</strong></span>
+                {{else}}
+                <span><strong>Additional Provider</strong></span>
+                {{/if}}
+                <br />
+                <span>{{providerDisplayName}}</span>
+            </p>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+    {{#if dischargeDiagnoses}}
+    <div class="row top-margin-sm">
+        <div class="col-xs-12">
+            <h5 class="bottom-border-grey-dark" data-group-instanceid="diagnosisSection">Discharge Diagnoses</h5>
+        </div>
+        {{#each dischargeDiagnoses}}
+        <div class="col-xs-12">
+            <p>
+                <span>
+                {{#if icdName}}
+                    {{icdName}}
+                {{else}}
+                    Unknown
+                {{/if}}
+                </span>
+            </p>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+    {{#if movements}}
+    <div class="row top-margin-sm">
+        <div class="col-xs-12">
+            <h5 class="bottom-border-grey-dark" data-group-instanceid="movementSection">Movements</h5>
+        </div>
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table class="table">
+                    <caption class="sr-only">This table represents data for movements categorized by date, location name, and type.</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Location Name</th>
+                            <th scope="col">Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each movements}}
+                        <tr>
+                            <td>{{formatDate dateTime}}</td>
+                            {{#if locationName}}
+                            <td>{{locationName}}</td>
+                            {{else}}
+                            <td >N/A</td>
+                            {{/if}}
+                            <td>{{movementType}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    {{#if reasonName }}
+    <div class="row top-margin-sm">
+        <div class="col-xs-12">
+            <h5 class="bottom-border-grey-dark" data-group-instanceid="reasonSection">Reason</h5>
+        </div>
+        <div class="col-xs-12">
+            <p>
+                <span data-detail="reasonName">{{reasonName}}</span>
+            </p>
+        </div>
+    </div>
+    {{/if}}
+    {{#if cptInfo}}
+    <div class="row top-margin-sm">
+        <div class="col-xs-12">
+            <h5 class="bottom-border-grey-dark" data-group-instanceid="cptSection">Procedures</h5>
+        </div>
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table class="table">
+                    <caption class="sr-only">This table represents data for procedures categorized by date, name, quantity, and comment.</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each cptInfo}}
+                        <tr>
+                            <td>{{formatDate entered}}</td>
+                            <td>{{name}}</td>
+                            <td>{{quantity}}</td>
+                            {{#if comment}}
+                            <td>{{comment}}</td>
+                            {{else}}
+                            <td>N/A</td>
+                           {{/if}}
+                       </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+</div>
+{{/if}}
+

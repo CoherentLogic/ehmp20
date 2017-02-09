@@ -1,0 +1,156 @@
+.navbar {
+    &.navbar-default {
+        background-color: $secondary-light;
+        border: 0px;
+        border-radius: 0px;
+        box-shadow: inset 0 -5px 5px -5px $grey-dark;
+        margin-bottom: 0px;
+        min-height: 20px;
+        .container-fluid {
+            ul,
+            li {
+                &.divider-left {
+                    border-left: 1px solid $grey;
+                }
+                &.divider-right {
+                    border-right: 1px solid $grey;
+                }
+            }
+            ul.nav {
+                &.navbar-nav {
+                    margin: 3px 2px;
+                    li {
+                        font-size: 14px;
+                        height: 20px;
+                        #eHMPCurrentUser {
+                            font-size: 96%;
+                            margin-top: -2px;
+                            &:focus {
+                                background-color: transparent;
+                            }
+                        }
+                        ul {
+                            &.dropdown-menu {
+                                margin-top: 2px;
+                                li a {
+                                    width: 100%;
+                                    &:hover,
+                                    &:focus {
+                                        background-color: $grey-lightest;
+                                    }
+                                }
+                            }
+                        }
+                        // Patient Search Icon
+                        .fa-user + .fa-search {
+                            bottom: 4px;
+                            font-size: 7px;
+                            position: relative;
+                            right: 1px;
+                        }
+                        // Patient Context Icon
+                        .fa-question-circle {
+                            &.fa-lg {
+                                font-size: 16px;
+                                vertical-align: 0;
+                            }
+                        }
+                        .context-navigation-link {
+                            .fa-stack {
+                                height: 12px;
+                                line-height: 12px;
+                                margin-top: -6px;
+                                width: 15px;
+                            }
+                            .fa-circle {
+                                font-size: 16px;
+                            }
+                            .fa-user {
+                                margin-top: 2px;
+                            }
+                            .nav-ccow {
+                                border-radius: 20px;
+                                padding: 1px 9px 1px 6px;
+                                top: -2px;
+                                position: relative;
+                                .fa-stack {
+                                    margin-top: -7px;
+                                }
+                            }
+                            .vault-unavailable {
+                               cursor:inherit !important;
+                            }
+                            .icon-ccow-connected,
+                            .icon-ccow-disconnected {
+                               position: relative;
+                               top: 1px;
+                               cursor:pointer;
+                            }
+                        }
+                        // Dropdown menu divider
+                        &.divider {
+                            height: 1px;
+                        }
+                        button,
+                        a,
+                        p {
+                            color: $primary;
+                            padding: 4px 10px;
+                            margin-top: -3px;
+                            padding-bottom: 2px;
+                            &:hover {
+                                background-color: transparent;
+                                color: $primary-dark;
+                                outline: none;
+                            }
+                            &:focus {
+                                color: $primary-dark;
+                                outline: $primary-dark dotted thin;
+                            }
+                            &.context-navigation-link {
+                                height: 26px;
+                                &.active {
+                                    color: $primary-dark;
+                                    outline: none;
+                                    background: white;
+                                    border-color: $grey;
+                                    border-style: none solid;
+                                    border-width: medium 1px;
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                        p {
+                            color: $grey-darkest;
+                            &:hover {
+                                color: $grey-darkest;
+                            }
+                        }
+                        //Shortcuts and Notifications
+                        &.alert-dropdown {
+                            .badge {
+                                border-radius: 4px;
+                                font-weight: 600;
+                                left: 20px;
+                                padding: 1px 2px 2px 2px;
+                                position: absolute;
+                                top: 4px;
+                                color: $pure-black;
+                                background-color: $tertiary-darker;
+                            }
+                            &.open {
+                                button,
+                                a {
+                                    color: $pure-white;
+                                    background: $primary;
+                                    border-radius: 0;
+                                    padding-bottom: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

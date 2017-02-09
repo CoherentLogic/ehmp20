@@ -1,0 +1,98 @@
+.search-applet-main {
+    height: calc(90vh - 78px);
+    display: flex;
+    flex-direction: column;
+    background-color: $pure-white;
+    padding-bottom: 10px;
+    .panel-group {
+        .panel {
+            border: none;
+            box-shadow: none;
+        }
+        .btn {
+            &.btn-accordion {
+                border: 1px solid $grey-light;
+                background-color: $primary-lightest;
+                &:hover {
+                    background-color: $primary-lighter;
+                }
+            }
+        }
+        .panel-collapse {
+            >.list-group {
+                border-top: none !important;
+                margin-top: 5px;
+                .search-group {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+    .search-result-header {
+        flex-grow: 0;
+        flex-shrink: 0;
+
+        .search-results-filter {
+            text-align: right;
+            padding: 0;
+            .input-group-addon {
+                padding: 1px 8px;
+            }
+        }
+    }
+    .search-results .search-group {
+        .search-result-item {
+            border-bottom: 1px solid $grey-lighter;
+            cursor: pointer;
+            &:hover, &:focus {
+                background-color: $primary-lightest;
+            }
+            .datetime-highlights {
+                padding-left: 50px;
+            }
+        }
+    }
+}
+.text-search-input-container {
+    flex: 1 3 30%;
+    padding-left: 5px;
+    max-width: 200px;
+    .dropdown-menu, .suggest-list-container{
+        max-height: 300px;
+        min-width: 469px;
+        display: none;
+        #suggestList {
+            margin: 0px;
+            li {
+                a {
+                    border-bottom: 1px solid $grey-lighter;
+                    text-decoration: none;
+                }
+                &:last-of-type {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+    .form-group {
+        margin-bottom: 0px;
+        input {
+            border-radius: 20px;
+            min-width:80px;
+            height: 25px;
+        }
+        .form-control {
+            padding: 0px 24px 0px 12px;
+            &::-ms-clear {
+                display: none;
+                width:0;
+                height:0;
+            }
+        }
+        .form-control-feedback {
+            right: -3px;
+            top: -5px !important;
+            font-size: 16px;
+        }
+    }
+}

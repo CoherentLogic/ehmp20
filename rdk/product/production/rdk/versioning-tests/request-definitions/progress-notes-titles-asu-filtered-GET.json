@@ -1,0 +1,29 @@
+{
+	"parameters": {
+		"actionNames": {
+			"name": "actionNames",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		},
+		"docStatus": {
+			"name": "docStatus",
+			"paramType": "query",
+			"required": true,
+			"type": "string",
+			"values": [
+			]
+		},
+		"roleNames": {
+			"name": "roleNames",
+			"paramType": "query",
+			"type": "string",
+			"values": [
+			]
+		}
+	},
+	"schema": {
+	}
+}

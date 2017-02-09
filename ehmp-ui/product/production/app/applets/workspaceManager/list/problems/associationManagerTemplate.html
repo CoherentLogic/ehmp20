@@ -1,0 +1,43 @@
+{{#unless predefined}}
+<div class="association-manager">
+    <div class="typeahead-wrapper bottom-padding-xs">
+        <div class="form-group form-group-custom">
+            <form>
+                <label for="screenProblemSearch" class="hidden">Search for problems</label>
+                <input type="text" class="form-control" id="screenProblemSearch" placeholder="Search Problems" title="Enter text to begin searching. Results will appear below. Then press tab to view results.">
+            </form>
+            <button class="clear-search-problem-btn btn btn-md btn-icon" type="button" title="Press enter to clear text">
+                <i class="fa fa-times-circle font-size-12"></i>
+            </button>
+            <div class="problem-loading-container">
+                <div id="problemQueryStatusRegion" class="tt-dropdown-menu form-control hidden-overflow"></div>
+            </div>
+        </div>
+    </div>
+    <span class="sr-only">Conditions associated with this workspace</span>
+    <div class="problem-list-region"></div>
+</div>
+<div class="association-manager-footer row top-margin-sm">
+    <button class="user-defined-template btn btn-default navbar-btn btn-sm pull-right" type="button" id="associationManagerCloseBtn" title="Press enter to close">Close</button>
+</div>
+{{else}}
+
+<div class="association-manager default-workspace">
+    <div class="typeahead-wrapper bottom-padding-xs">
+        <div class="form-group form-group-custom twitter-typeahead">
+            <form>
+                <label for="screenProblemSearch"></label>
+                <input type="text" class="form-control" id="screenProblemSearch" placeholder="Search Problems" disabled="true" title="Enter text to begin searching. Results will appear below. Then press tab to view results.">
+            </form>
+            <button class="clear-search-problem-btn btn btn-md btn-icon" type="button" title="Press enter to clear text">
+                <i class="fa fa-times-circle font-size-12"></i>
+            </button>
+        </div>
+    </div>
+    <span class="sr-only">Associations cannot be added to this workspace.</span>
+    <div class="problem-list-region"></div>
+</div>
+<div class="association-manager-footer row top-margin-sm">
+    <button class="predefined-template btn btn-default navbar-btn btn-sm pull-right" type="button" id="associationManagerCloseBtn" title="Press enter to close">Close</button>
+</div>
+{{/unless}}
